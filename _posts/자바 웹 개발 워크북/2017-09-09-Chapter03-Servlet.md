@@ -8,12 +8,12 @@ categories: [자바 웹 개발 워크북]
 CGI
 ----
 
-![CGI 규칙](../img/webworkbook/CGI규칙.png)
+![CGI 규칙](/images/webworkbook/CGI규칙.png)
 - CGI(Common Gateway Interface)
 - 웹 서버와 프로그램 사이의 데이터를 주고받는 규칙
 - 웹 서버에 의해 실행되며 CGI 규칙에 따라서 웹 서버와 데이터를 주고 받도록 작성된 프로그램을 'CGI프로그램'이라고 한다
 
-![CGI컴파일](../img/webworkbook/CGI컴파일.png)
+![CGI컴파일](/images/webworkbook/CGI컴파일.png)
 - 컴파일 방식은 기계어로 번역된 코드를 바로 실행하기 때문에 실행 속도가 **빠르지만**, 변경 사항이 발생할 때 마다 다시 컴파일 하고 **재배포**해야 하는 문제가 있다.
 
 ![CGI인터프리터](../img/CGI인터프리터.png)

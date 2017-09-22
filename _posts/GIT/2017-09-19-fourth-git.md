@@ -17,32 +17,32 @@ master 파일은 **최신 커밋**을 가리킨다.
 깃을 초기화 하면 **HEAD 파일**을 가지게된다. HEAD 파일은 **refs/heads의 파일(처음엔 master)**을 가리키고, 이 파일은 가장 최근에 commit한 **commit의 object 아이디 값**을 가지고 있다.
 > HEAD -> master -> 최신 commit
 
-![head_first](../img/gitfth/head_first.png)  
+![head_first](/images/gitfth/head_first.png)  
 
-![commit_after_head](../img/gitfth/commit_after_head.png)
+![commit_after_head](/images/gitfth/commit_after_head.png)
 
 ##\<git log>
 
 그래서 'git log'는 HEAD파일을 보고, HEAD파일은 master 파일을 보고, master파일은 object 아이디 값을 봐서 가장 최근의 commit을 알수 있다. 그 이후 parent를 보고 이전 작업들을 탐색해 나갈수 있다.
 
-![checkout_master](../img/gitfth/checkout_master.png)  
+![checkout_master](/images/gitfth/checkout_master.png)  
 
 ##branch  
 
 깃 에서 브랜치라고 하는것은 refs 밑에 있는 파일을 의미한다.  
 >'git branch exp' 이후 '.git/refs/heads' 폴더 내부의 파일들  
 >
-> ![branch_refs](../img/gitfth/branch_refs.png)
+> ![branch_refs](/images/gitfth/branch_refs.png)
 >
-> ![new_branch](../img/gitfth/new_branch.png)  
+> ![new_branch](/images/gitfth/new_branch.png)  
 
 즉, 'git checkout branch이름'을 후 HEAD가 가리키는 파일이 변경되는 것이다.
 
-![checkout_exp](../img/gitfth/checkout_exp.png)  
+![checkout_exp](/images/gitfth/checkout_exp.png)  
 
 또한 git log시 보이는 **HEAD->master**는 HEAD 파일이 무엇을 가리키고 있는지를 나타내는 것이다.
 
-![log_head](../img/gitfth/log_head.png)  
+![log_head](/images/gitfth/log_head.png)  
 
 
 ####branch는 중요하고 강력한 기능이지만 사실은 텍스트파일 하나 일뿐이다.
@@ -63,7 +63,7 @@ reset과 checkout의 원리
 
 ###reset 수행 후 해당 파일의 내용을 보면
 
-![move4](../img/gitfth/move4.png)  
+![move4](/images/gitfth/move4.png)  
 
 현재 내용은 4번 commit을 3번 commit으로 move했다는 내용이 있다.
 
@@ -71,7 +71,7 @@ reset과 checkout의 원리
 
 위 명령어를 수행하면 logs/HEAD의 내용을 볼수 있다.
 
-![reflog](../img/gitfth/reflog.png)  
+![reflog](/images/gitfth/reflog.png)  
 
 
 reset을 취소하고 싶다면 해당 파일 내용을 참고하면 된다.
@@ -80,16 +80,16 @@ reset을 취소하고 싶다면 해당 파일 내용을 참고하면 된다.
 
 ORIG_HEAD는 뭔가 위험한 명령들을 하기전에 최신 branch에 HEAD가 가리키고 있는 commit을 기록해 둔다. 그래서 이걸 이용해서도 방금 작업한 명령을 취소할수 있다.  
 
-![ORIG_HEAD](../img/gitfth/ORIG_HEAD.png)  
+![ORIG_HEAD](/images/gitfth/ORIG_HEAD.png)  
 
 >git reset --hard ORIG_HEAD
 
 
 ###직접 branch commit이름을 통해서도 HEAD를 변경 시킬 수 있다.
 
-![branch_commit1](../img/gitfth/branch_commit1.png)  
+![branch_commit1](/images/gitfth/branch_commit1.png)  
 
-![branch_commit2](../img/gitfth/branch_commit2.png)  
+![branch_commit2](/images/gitfth/branch_commit2.png)  
 
 직접 커밋을 가리키고 있다.
 
@@ -120,10 +120,10 @@ merge & conflict의 원리
 =======================
 
 ###conflict시 내용  
-![conflict](../img/gitfth/conflict.png)  
+![conflict](/images/gitfth/conflict.png)  
 
 ###conflict시 index 내용
-![conflict_index](../img/gitfth/conflict_index.png)  
+![conflict_index](/images/gitfth/conflict_index.png)  
 - 1번은 원본 파일
 - 2번은 merge를 하는 branch의 파일
 - 3번은 병합이 될 대상이다
@@ -155,6 +155,6 @@ git mergetool
 3개의 파일로 conflict의이 난곳을 판단한다. ?의 위치가 conflict의이 발생한 위치이고 나머지는 자동으로 merge 된다.
 
 ###2 way merge
-![2way_merge](../img/gitfth/2way_merge.png)  
+![2way_merge](/images/gitfth/2way_merge.png)  
 
 두개의 파일로만 conflict의이 난 곳을 판단 한다.

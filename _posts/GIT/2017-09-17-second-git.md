@@ -25,17 +25,17 @@ pip3 install gitstory
 gitstory
 ```
   <실행 화면>
-  ![gistory](../img/gitfth/gitstory.png)
+  ![gistory](/images/gitfth/gitstory.png)
 
 ---
-![gitadd_gistory](../img/gitfth/gitadd_gistory.png)
+![gitadd_gistory](/images/gitfth/gitadd_gistory.png)
 <add 후 Gistory의 변화>  
 
 파일의 이름은 index에 파일의 내용은 object에 있다.
 
 git은 파일을 저장 할 때 파일의 이름이 달라도 파일의 내용이 같으면 같은 오브젝트를 가리킨다.
 
-![gitadd_gistory](../img/gitfth/copy.png)
+![gitadd_gistory](/images/gitfth/copy.png)
 ```
 100644 78981922613b2afb6025042ff6bd878ac1994e85 0	f1.txt
 100644 78981922613b2afb6025042ff6bd878ac1994e85 0	f3.txt
@@ -48,7 +48,7 @@ git은 파일의 내용 기반으로 object 파일의 이름을 만든다. 이�
 
 git은 우리가 저장한 우리가 저장한 파일의 내용을 SHA1이라는 hash 알고리즘을 통과시켜서 파일의 이름을 도출 한 다음 그 파일의 이름, 즉 hash 정보에서 두 글자를 따서 object 디렉토리 밑에다가 디렉토리를 만들고 다음 문자들로 파일을 만들어서 정보를 저장 한다.
 
-  >![sha1](../img/gitfth/sha1.png)  
+  >![sha1](/images/gitfth/sha1.png)  
 
   >**aa**f4c61ddcc5e8a2dabede0f3b482cd9aea9434d   
   >aa가 디렉토리 이름이 된다.  
@@ -66,7 +66,7 @@ commit의 원리
 
 commit 메시지에 해당하는 정보 또한 objects 디렉터리에 들어간다. 즉 버전도 objects에 들어간다. commit도 객체로(object) 본다.
 
-  ![object](../img/gitfth/object.png)  
+  ![object](/images/gitfth/object.png)  
 
 ###commit에는 중요한 정보가 두가지 있다.
  - 이전 커밋이 누구인가 부모를 나타내는 **parent**가 있다.
@@ -93,10 +93,10 @@ git status
 
 index라는 파일과 현재 우리의 최신 commit. 이 두가지를 비교하면 add, commit 할 것이 있는지 아닌지 알 수 있다.
 >\<index 내용>  
->![index_inf](../img/gitfth/index_inf.png)   
+>![index_inf](/images/gitfth/index_inf.png)   
 
 >\<commit 내용>  
->![commit_inf](../img/gitfth/commit_inf.png)
+>![commit_inf](/images/gitfth/commit_inf.png)
 
 인덱스의 내용과 가장 최신 커밋의 트리의 내용이 일치하면 현재 add, commit 할 것이 없는 것이다.  
 
