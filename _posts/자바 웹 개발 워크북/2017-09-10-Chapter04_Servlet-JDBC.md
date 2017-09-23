@@ -9,18 +9,23 @@ Chapter04 - 서블릿과 JDBC
 =========================
 
 - 서블릿이 하는 주된 일은 클라이언트가 요청한 데이터를 다루는 일이다. 데이터를 가져오거나 입력, 변경, 삭제 등을 처리하려면 데이터베이스의 도움을 받아야 한다.
+
 ---
+
 CRUD란?
---------
+========
 - Create
 - Retreival
 - Update
 - Delete
 
   가장 기본적인 데이터베이스 연산
+
 ---
+
  JDBC란?
-----
+=========
+
 - 자바 프로그램 안에서 SQL을 실행하기 위해 데이터베이스를 연결해주는 응용프로그램 인터페이스를 말한다.
 ---
 
@@ -54,7 +59,7 @@ response.setContentType("text/html; charset=UTF-8");
 - 출력 스트림을 얻기 전에 먼저 setContentType()를 호출하여 출력하려는 데이터 형식(HTML)rhk answk wlqgkq(UTF-8)을 지정한다.
 
 모아 보기
--------
+=======
 ```
 DriverManager.registerDriver(new com.mysql.jdbc.Driver());
 			conn = DriverManager.getConnection(
@@ -80,8 +85,9 @@ finally {
 ```
 
 ---
+
 HttpServlet으로 GET, POST 요청 다루기
-------
+====================================
 
 HttpServlet 클래스는 GenericServlet 클래스의 하위 클래스다. 따라서 HttpServlet을 상속받으면 GenericServlet 클래스를 상속받는 것과 마찬가지로 javax.servlet.Servlet 인터페이스를 구현한 것이 된다.
 
@@ -91,8 +97,9 @@ HttpServlet 클래스는 GenericServlet 클래스의 하위 클래스다. 따라
 
 
 ---
+
 리프래시(Refresh, 새로 고침)
-------------------------
+==========================
 
 응답 헤더에 리프래시 정보를 추가하여 보낸다
 ```
@@ -112,8 +119,9 @@ Server: Apache-Coyote/1.1
 Refresh: 1;url=list
 Content-Type: text/html;charset=UTF-8
 ```
+
 리다이렉트(Redirect)
-------------------
+==================
 
 리다이렉트를 요구하는 HttpServletResponse의 sendRedirect() 호출 코드를 추가 한다.
 리다이렉트는 클라이언트로 본문을 출력하지 않기 때문에 HTML을 출력하는 코드가 필요 없다.
@@ -127,19 +135,21 @@ Server: Apache-Coyote/1.1
 Location: http://localhost:9999/web04/member/list
 Content-Length: 0
 ```
-####- 작업 결과를 출력한 후 다른 페이지를 이동 할 때는 리프래시를 사용
-####- 작업 결과를 출력하지 않고 다른 페이지로 이동 할 때는 리다이렉트를 사용
+#### - 작업 결과를 출력한 후 다른 페이지를 이동 할 때는 리프래시를 사용
+#### - 작업 결과를 출력하지 않고 다른 페이지로 이동 할 때는 리다이렉트를 사용
 
 ---
+
 서블릿 초기화 매개변수
--------------------
-####서블릿 초기화 매개변수란?
+==================
+
+### 서블릿 초기화 매개변수란?
 - 서블릿을 생성하고 초기화하는 init()를 호출할 때 서블릿 컨테이너가 전달하는 데이터이다.
 - 데이터베이스 연결 정보와 같은 정적인 데이터를 서블릿에 전달할 때 사용한다.
 
 서블릿 초기화 매개변수는 DD파일(web.xml)의 서블릿 배치 정보에 설정할 수 있고, 애노테이션을 사용하여 서블릿 소스 코드에 설정할 수 있다.
 
-####DD파일에 서블릿 초기화 매개변수 설정
+### DD파일에 서블릿 초기화 매개변수 설정
 ```
 <servlet>
   <servlet-name>MemberUpdateServlet</servlet-name>
@@ -178,8 +188,9 @@ Class.forName(this.getInitParameter("driver"));
 - JDBC 드라이버 클래스의 이름은 서블릿 초기화 매개변수에서 얻어 온다.
 
 ---
+
 컨텍스트 초기화 매개변수
---------------------
+====================
 
 서블릿 초기화 매개변수는 매개변수가 선언된 서블릿에서만 사용될 수 있다. 다른 서블릿은 참조할 수 업삳. 따라서 **JDBC 드라이버와 데이터베이스 연결 정보에 대한 초기화 매개변수를 각 서블릿마다 별도로 설정해 주어야 한다.** 그러나 여러 서블릿이 사용하는 JDBC 드라이버와 DB연결 정보가 같다면, 각각의 서블릿마다 초기화 매개변수를 선언하는 것은 낭비적인 작업이다. 이런 경우 컨텍스트 초기화 매개변수를 사용한다.
 
@@ -220,10 +231,11 @@ ServletContext sc = this.getServletContext();
 ####여러 서블릿에서 공통으로 참고하는 값이 있을 경우 컨텍스트 매개변수로 정의하자
 
 ----
-필터
-----
 
-####필터란?
+필터
+====
+
+### 필터란?
 필터는 서블릿 실행 전후에 어떤 작업을 하고자 할 때 사용하는 기술
 - 데이터의 암호를 해제
 - 서블릿이 실행되기 전 필요한 자원 준비
@@ -233,7 +245,7 @@ ServletContext sc = this.getServletContext();
 
   ![필터의실행](/images/webworkbook/필터의실행.png)
 
-####필터 클래스
+### 필터 클래스
 필터 클래스는 javax.servlet.Filter 인터페이스를 구현해야 한다.
 
   ![필터클래스](/images/webworkbook/필터클래스.png)
@@ -265,7 +277,7 @@ ServletContext sc = this.getServletContext();
 - destroy(){...}
   필터 인스턴스를 종료하기 전에 호출하는 메소드
 
-####DD 파일에 필터 배치 정보 설정
+### DD 파일에 필터 배치 정보 설정
 web.xml 파일에 문자 집합을 설정하는 필터를 등록
 ```
 <!-- 필터 선언 -->

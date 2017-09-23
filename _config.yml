@@ -52,10 +52,10 @@ sass:
 permalink:   /:categories/:title/
 
 categories:
+  - 알고리즘
   - 자바 웹 개발 워크북
   - TIL
   - Git
-  - Java Web Workbook
 
 # Amount of post to show on home page
 paginate: 5
