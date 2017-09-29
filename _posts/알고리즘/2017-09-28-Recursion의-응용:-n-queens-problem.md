@@ -7,8 +7,8 @@ categories: [알고리즘]
 
 인프런의 [영리한 프로그래밍을 위한 알고리즘 강좌](https://www.inflearn.com/course/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EA%B0%95%EC%A2%8C/)를 보고 작성한 문서입니다.
 
-n queens problem
-==================
+Recursion의 응용: n queens problem
+==================================
 
 
 상태 공간 트리
@@ -138,8 +138,8 @@ boolean promising(int level){
     } else if on the same diagonal{
       return false;
     }
-    return true;
   }
+  return true;
 }
 ```
 
@@ -159,8 +159,8 @@ boolean promising(int level){
     } else if(level-i==Math.abs(cols[level]-cols[i])){
       return false;
     }
-    return true;
   }
+  return true;
 }
 ```
 
@@ -198,7 +198,7 @@ boolean promising(int level){
     } else if(level-i==Math.abs(cols[level]-cols[i])){
       return false;
     }
-    return true;
   }
+  return true;
 }
 ```
