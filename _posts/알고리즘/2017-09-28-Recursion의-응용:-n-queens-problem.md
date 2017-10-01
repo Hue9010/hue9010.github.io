@@ -7,12 +7,9 @@ categories: [알고리즘]
 
 인프런의 [영리한 프로그래밍을 위한 알고리즘 강좌](https://www.inflearn.com/course/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EA%B0%95%EC%A2%8C/)를 보고 작성한 문서입니다.
 
-Recursion의 응용: n queens problem
-==================================
-
 
 상태 공간 트리
-------------
+============
 
 ![상태공간트리](/images/algorithm/상태공간트리.png)
 
