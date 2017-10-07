@@ -44,7 +44,8 @@ decision_tree
 ![decision_tree](/images/algorithm/decision_tree.png)  
 (1,2,3의 의미는 숫자 값이 아니라 정렬할 데이터들의 첫번째, 두번째 값을 의미)
 
-- Leaf노드의 개수는 n!개. 왜냐하면 모든 순열(permutation)에 해당하므로
+- Leaf노드의 개수는 n!개    
+  왜냐하면 모든 순열(permutation)에 해당하므로
 
 - 최악의 경우 시간복잡도는 트리의 높이
 
