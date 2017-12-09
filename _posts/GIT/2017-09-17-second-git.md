@@ -15,27 +15,35 @@ git의 원리
 
 ---
 gitstory 설치
-=============
+-------------
+
 ```
 pip install gitstory
 pip3 install gitstory
-```
-.git이 있는 폴더로 가서
+```  
+
+.git이 있는 폴더로 가서  
+
 ```
 gitstory
-```
-  <실행 화면>
-  ![gistory](/images/gitfth/gitstory.png)
+```  
+
+<실행 화면>  
+
+![gistory](/images/gitfth/gitstory.png)   
 
 ---
-![gitadd_gistory](/images/gitfth/gitadd_gistory.png)
+
+![gitadd_gistory](/images/gitfth/gitadd_gistory.png)  
+
 <add 후 Gistory의 변화>  
 
 파일의 이름은 index에 파일의 내용은 object에 있다.
 
 git은 파일을 저장 할 때 파일의 이름이 달라도 파일의 내용이 같으면 같은 오브젝트를 가리킨다.
 
-![gitadd_gistory](/images/gitfth/copy.png)
+![gitadd_gistory](/images/gitfth/copy.png)  
+
 ```
 100644 78981922613b2afb6025042ff6bd878ac1994e85 0	f1.txt
 100644 78981922613b2afb6025042ff6bd878ac1994e85 0	f3.txt
@@ -43,7 +51,8 @@ git은 파일을 저장 할 때 파일의 이름이 달라도 파일의 내용�
 
 ---
 objects 파일명의 원리
-===================
+--------------------
+
 git은 파일의 내용 기반으로 object 파일의 이름을 만든다. 이것 덕분에 git은 매우 효율적으로 중복 데이터를 저장할 수 있다. 여기는 그 원리인 [SHA1 hash](http://www.sha1-online.com/)에 대해서 알아본다.
 
 git은 우리가 저장한 우리가 저장한 파일의 내용을 SHA1이라는 hash 알고리즘을 통과시켜서 파일의 이름을 도출 한 다음 그 파일의 이름, 즉 hash 정보에서 두 글자를 따서 object 디렉토리 밑에다가 디렉토리를 만들고 다음 문자들로 파일을 만들어서 정보를 저장 한다.
@@ -62,13 +71,14 @@ git은 sha1을 쓰지만 부가적인 정보는 달라도 위와 같은 방식�
 
 ---
 commit의 원리
-============
+------------
 
 commit 메시지에 해당하는 정보 또한 objects 디렉터리에 들어간다. 즉 버전도 objects에 들어간다. commit도 객체로(object) 본다.
 
-  ![object](/images/gitfth/object.png)  
+![object](/images/gitfth/object.png)  
 
-###commit에는 중요한 정보가 두가지 있다.
+###commit에는 중요한 정보가 두가지 있다.  
+
  - 이전 커밋이 누구인가 부모를 나타내는 **parent**가 있다.
 
  - 커밋이 일어난 시점에 작업 디렉토리에 있는 파일의 이름과 그 파일의 이름이 담고있는 내용 사이에 정보가 **tree**에 담겨있다.  
@@ -79,7 +89,8 @@ commit 메시지에 해당하는 정보 또한 objects 디렉터리에 들어간
 
 objects에 들어가있는 파일들은 object다(객체)
 
-###object의 세가지 구성요소
+###object의 세가지 구성요소  
+
 - blob: 파일의 내용을 담고 있다.
 
 - tree: 어떤 디렉터리에 파일명과 내용에 해당하는 blob을 담고 있다.
