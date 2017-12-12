@@ -21,19 +21,19 @@ master 파일은 **최신 커밋**을 가리킨다.
 
 ![commit_after_head](/images/gitfth/commit_after_head.png)
 
-##\<git log>
+## \<git log>
 
 그래서 'git log'는 HEAD파일을 보고, HEAD파일은 master 파일을 보고, master파일은 object 아이디 값을 봐서 가장 최근의 commit을 알수 있다. 그 이후 parent를 보고 이전 작업들을 탐색해 나갈수 있다.
 
 ![checkout_master](/images/gitfth/checkout_master.png)  
 
-##branch  
+## branch  
 
 깃 에서 브랜치라고 하는것은 refs 밑에 있는 파일을 의미한다.  
->'git branch exp' 이후 '.git/refs/heads' 폴더 내부의 파일들  
->
+>\'git branch exp' 이후 '.git/refs/heads' 폴더 내부의 파일들  
+
 > ![branch_refs](/images/gitfth/branch_refs.png)
->
+
 > ![new_branch](/images/gitfth/new_branch.png)  
 
 즉, 'git checkout branch이름'을 후 HEAD가 가리키는 파일이 변경되는 것이다.
@@ -45,12 +45,13 @@ master 파일은 **최신 커밋**을 가리킨다.
 ![log_head](/images/gitfth/log_head.png)  
 
 
-####branch는 중요하고 강력한 기능이지만 사실은 텍스트파일 하나 일뿐이다.
+#### branch는 중요하고 강력한 기능이지만 사실은 텍스트파일 하나 일뿐이다.
 
 
 
 
 ---
+
 reset과 checkout의 원리
 ======================
 
@@ -61,7 +62,7 @@ reset과 checkout의 원리
 
 - /logs/refs/heads/master는 mater brahcn에서 일어나는 여러 사건들을 기록하는 log다.
 
-###reset 수행 후 해당 파일의 내용을 보면
+### reset 수행 후 해당 파일의 내용을 보면
 
 ![move4](/images/gitfth/move4.png)  
 
@@ -76,7 +77,7 @@ reset과 checkout의 원리
 
 reset을 취소하고 싶다면 해당 파일 내용을 참고하면 된다.
 
-###ORIG_HEAD
+### ORIG_HEAD
 
 ORIG_HEAD는 뭔가 위험한 명령들을 하기전에 최신 branch에 HEAD가 가리키고 있는 commit을 기록해 둔다. 그래서 이걸 이용해서도 방금 작업한 명령을 취소할수 있다.  
 
@@ -85,7 +86,7 @@ ORIG_HEAD는 뭔가 위험한 명령들을 하기전에 최신 branch에 HEAD가
 >git reset --hard ORIG_HEAD
 
 
-###직접 branch commit이름을 통해서도 HEAD를 변경 시킬 수 있다.
+### 직접 branch commit이름을 통해서도 HEAD를 변경 시킬 수 있다.
 
 ![branch_commit1](/images/gitfth/branch_commit1.png)  
 
@@ -94,11 +95,13 @@ ORIG_HEAD는 뭔가 위험한 명령들을 하기전에 최신 branch에 HEAD가
 직접 커밋을 가리키고 있다.
 
 ---
+
 reset으로 알아보는 working copy, index, repository
-======================================
+=================================================
 
 
-**<option에 따른 범위>**  
+**\<option에 따른 범위>**  
+
 ![생활코딩_이미지](https://s3-ap-northeast-2.amazonaws.com/opentutorials-user-file/module/2676/5131.png)
 (출처: [생활코딩](https://s3-ap-northeast-2.amazonaws.com/opentutorials-user-file/module/2676/5131.png))  
 
@@ -106,34 +109,35 @@ reset으로 알아보는 working copy, index, repository
 
   위험하지만 가장 심플하다.
 
-###working directory
+### working directory
   >실제 작업을 진행 하는 곳
 
-###index  
+### index  
   >우리가 git add를 하면 포함 되는 곳  
-###repository   
+### repository   
   >실제 우리의 commit들이 저장되는 곳(광범위하게 사용되는 의미이기 때문에, 문맥에따라 해석해야 한다.)
 (옵션을 생략하면 mixed다)
 
 ---
+
 merge & conflict의 원리
 =======================
 
-###conflict시 내용  
+### conflict시 내용  
 ![conflict](/images/gitfth/conflict.png)  
 
-###conflict시 index 내용
+### conflict시 index 내용
 ![conflict_index](/images/gitfth/conflict_index.png)  
 - 1번은 원본 파일
 - 2번은 merge를 하는 branch의 파일
 - 3번은 병합이 될 대상이다
 
-###병합을 전문적으로 하는 툴들이 있다.
+### 병합을 전문적으로 하는 툴들이 있다.
 - kdiff3
 
 - bc(beyond compare)
 
-###병합 툴 등록
+### 병합 툴 등록
 ```
 git config --global merge.tool kdiff3
 git config --global merge.tool bc
@@ -145,16 +149,17 @@ git mergetool
 ```
 
 ---
+
 3 way merge
 ============
 
-###3 way merge
+### 3 way merge
 ![3 way merge](https://s3-ap-northeast-2.amazonaws.com/opentutorials-user-file/module/2676/5133.png)  
 (출처: [생활코딩](https://s3-ap-northeast-2.amazonaws.com/opentutorials-user-file/module/2676/5133.png))  
 
 3개의 파일로 conflict의이 난곳을 판단한다. ?의 위치가 conflict의이 발생한 위치이고 나머지는 자동으로 merge 된다.
 
-###2 way merge
+### 2 way merge
 ![2way_merge](/images/gitfth/2way_merge.png)  
 
 두개의 파일로만 conflict의이 난 곳을 판단 한다.
