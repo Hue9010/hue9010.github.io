@@ -13,7 +13,7 @@ description: "Spring MVC에서 PUT, DELETE 메소드를 사용해보자"
 
 ---
 
-자 그러면 PUT, DELETE 메소드가 사용 가능하게 하는 방법을 보도록 하겠다.  
+### 자 그러면 PUT, DELETE 메소드가 사용 가능하게 하는 방법을 보도록 하겠다.  
 
 
 - PUT, DELETE를 사용하고 싶은 form에 hidden 타입의 input을 작성 한다.
@@ -26,8 +26,9 @@ description: "Spring MVC에서 PUT, DELETE 메소드를 사용해보자"
   ```
 
 - 이후 WebApplicationInitializer 인터페이스 구현 또는 web.xml 파일을 생성한 후 HiddenHttpMethodFilter를 설정해야 한다.  
+
   >### WebApplicationInitializer란?   
-  >ServletContext은 Servlet 3.0+ 환경에서 구현되는 인터페이스로 기존 web.xml기반 접근 방식과 반대되는 방식이다. 또는 동시에 적용 가능하다. ([docs.spring](https://docs.spring.io/spring/docs/3.1.0.M2/javadoc-api/org/springframework/web/WebApplicationInitializer.html))
+  >ServletContext은 Servlet 3.0+ 환경에서 구현되는 인터페이스로 기존 web.xml기반 접근 방식과 반대되는 방식이다. 또는 동시에 적용 가능하다. ([docs.spring](https://docs.spring.io/spring/docs/3.1.0.M2/javadoc-api/org/springframework/web/WebApplicationInitializer.html))  
 
   ```java
   public class MyWebInitializer implements WebApplicationInitializer {
@@ -40,7 +41,7 @@ description: "Spring MVC에서 PUT, DELETE 메소드를 사용해보자"
   }
   ```
 
-  web.xml로 작성하고 싶다면..
+  web.xml을 이용하고 싶다면..
 
   ```xml
   <!-- HTTP Method Filter -->
@@ -62,4 +63,6 @@ description: "Spring MVC에서 PUT, DELETE 메소드를 사용해보자"
   @RequestMapping(value = "/{questionId}", method = RequestMethod.PUT)
 
   @RequestMapping(value = "/{questionId}", method = RequestMethod.DELETE)  
-  ```
+  ```  
+
+  이처럼 생각보다 간단하다.
