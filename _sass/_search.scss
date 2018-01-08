@@ -1,0 +1,14 @@
+// 검색 버튼!!
+
+#search-btn {
+	position: absolute;
+  top: 10px;
+  left: 60px;
+  z-index: 100;
+
+	@media #{$medium} {
+		position: fixed;
+		top: 40px;
+		left: 100px;
+	}
+}

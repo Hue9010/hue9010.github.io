@@ -11,12 +11,8 @@
 
 {% include browser-upgrade.html %}
 {% include navigation.html %}
-<a href="/search/" style="position: fixed;
-    max-width: 175px;
-    top: 35px;
-    left: 100px;
-    z-index: 100;"><img src="/images/icon/search.png" /></a>
 
+{% include search.html %}
 
 <div class="entry-header">
   {% if page.image.credit %}<div class="image-credit">Image source: <a href="{{ page.image.creditlink }}">{{ page.image.credit }}</a></div><!-- /.image-credit -->{% endif %}
