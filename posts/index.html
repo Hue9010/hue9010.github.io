@@ -6,25 +6,27 @@ comments: false
 ---
 
 <div class="tags-expo">
-  <div class="tags-expo-list">
-    {% for tag in site.categories %}
-    <a href="#{{ tag[0] | slugify }}" class="post-tag">[{{ tag[0] }}]</a>
+<ul class="entry-meta inline-list">
+    {% for category in site.categories %}
+    <li><a href="#{{ category[0] | slugify }}" class="category"><span class="term">{{ category[0] }}</span><span class="count">{{ category[0].size }}</span></a></li>
     {% endfor %}
-  </div>
+</ul>
   <hr/>
   <div class="tags-expo-section">
-    {% for tag in site.categories %}
-    <h2 id="{{ tag[0] | slugify }}">{{ tag[0] }}</h2>
-    <ul class="tags-expo-posts">
-      {% for post in tag[1] %}
-        <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
-      <li>
-        {{ post.title }}
-       <small class="post-date">{{ post.date | date_to_string }}</small>
-      </li>
-      </a>
-      {% endfor %}
-    </ul>
+    {% for category in site.categories %}
+    <article>
+    <h2 id="{{ category[0] | slugify }}" class="tag-heading">{{ category[0] }}</h2>
+      <ul class="tags-expo-posts">
+        {% for post in category[1] %}
+          <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
+        <li>
+          {{ post.title }}
+         <small class="post-date">{{ post.date | date_to_string }}</small>
+        </li>
+        </a>
+        {% endfor %}
+      </ul>
+    </article>
     {% endfor %}
   </div>
 </div>
