@@ -8,8 +8,8 @@ description: "SpringBoot에서 ExceptionHandler를 통해 예외 처리를 해�
 
 스프링 부트에서 예외 처리 하는 세가지 방법 ([출처](http://www.ekiras.com/2016/02/how-to-do-exception-handling-in-springboot-rest-application.html))
 
-- #### Global Level using -  \@ControllerAdvice  
-- #### Controller Level using - \@ExceptionHandler   
+- #### Global Level using -  @ControllerAdvice  
+- #### Controller Level using - @ExceptionHandler   
 - #### Method Level using - try/catch    
 
 
