@@ -50,9 +50,6 @@
 				<li><a href="{{ site.url }}/tags/">All Tags</a></li>
 			</ul>
 		</li>
-		{% for category in site.categories %}
-		<li><a href="{{ site.url }}/posts/#{{ category[0] | slugify }}">{{ category[0] }}</a></li>
-		{% endfor %}
 		{% for link in site.data.navigation %}
 	    {% if link.url contains 'http' %}
 	        {% assign domain = '' %}

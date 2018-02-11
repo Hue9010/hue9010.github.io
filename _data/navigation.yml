@@ -1,7 +1,28 @@
 # Menu navigation links
 
-- title: Theme Setup
-  url: /theme-setup/
+- title: TIL
+  url: /posts/#til
 
-- title: External Link
-  url: http://mademistakes.com
+- title: GIT
+  url: /posts/#git
+
+- title: Java
+  url: /posts/#java
+
+- title: Spring
+  url: /posts/#spring
+
+- title: 알고리즘
+  url: /posts/#알고리즘
+
+- title: 자바 웹 개발 워크북
+  url: /posts/#자바-웹-개발-워크북
+
+- title: 프론트엔드
+  url: /posts/#프론트엔드
+
+- title: AWS
+  url: /posts/#aws
+
+- title: etc
+  url: /posts/#etc
