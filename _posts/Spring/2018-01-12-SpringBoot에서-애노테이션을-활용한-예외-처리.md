@@ -4,6 +4,8 @@ title:  "SpringBoot에서 애노테이션을 활용한 예외 처리"
 tags: [Spring, Exception, ExceptionHandler]
 categories: [Spring]
 description: "SpringBoot에서 ExceptionHandler를 통해 예외 처리를 해보자"
+image:
+  feature: header/java-spring-logo.png
 ---
 
 스프링 부트에서 예외 처리 하는 세가지 방법 ([출처](http://www.ekiras.com/2016/02/how-to-do-exception-handling-in-springboot-rest-application.html))

@@ -4,6 +4,8 @@ title:  "GET/POST 요청에 따른 테스트 코드 작성하기"
 tags: [Spring, Spring Security]
 categories: [Spring]
 description: "GET/POST 테스트 코드를 작성 해보자"
+image:
+  feature: header/java-spring-logo.png
 ---
 
 시작하며..  

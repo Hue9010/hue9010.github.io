@@ -4,6 +4,8 @@ title:  "Spring MVC - PUT, DELETE 사용하기"
 tags: [Spring, MVC, 스프링, PUT, DELETE, HTTP, Java]
 categories: [Spring]
 description: "Spring MVC에서 PUT, DELETE 메소드를 사용해보자"
+image:
+  feature: header/java-spring-logo.png
 ---
 ### Spring에서 PUT, DELETE를 사용해보자
 
