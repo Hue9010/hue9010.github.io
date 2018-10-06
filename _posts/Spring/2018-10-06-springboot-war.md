@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Springboot에서 jar 패키징으로 만든 프로젝트에서 war파일 만들기"
+title:  "Springboot에서 jar에서 war 파일을 만들게 설정 변경하기"
 tags: [Spring, war]
 categories: [Spring]
 description: "Springboot에서 jar 패키징 설정으로 만든 프로젝트에서 톰캣을 통한 배포를 하게 되어 war 파일을 만들 때 설정하는 법에 대해 알아 봅시다."
@@ -138,4 +138,4 @@ public class ServletInitializer extends SpringBootServletInitializer {
 
 참고 자료 : [Spring Boot에서 배포환경 나누기](http://yookeun.github.io/java/2017/04/08/springboot-deploy/), [Spring Boot 웹 애플리케이션을 WAR로 배포할 때 왜 SpringBootServletInitializer를 상속해야 하는걸까?](https://medium.com/@SlackBeck/spring-boot-%EC%9B%B9-%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%EC%9D%84-war%EB%A1%9C-%EB%B0%B0%ED%8F%AC%ED%95%A0-%EB%95%8C-%EC%99%9C-springbootservletinitializer%EB%A5%BC-%EC%83%81%EC%86%8D%ED%95%B4%EC%95%BC-%ED%95%98%EB%8A%94%EA%B1%B8%EA%B9%8C-a07b6fdfbbde)  
 
-(SpringBootServletInitializer에 대해 보다 자세히 알고 싶으시다면 첫 번째 참고 자료를 추천드립니다.)
+(SpringBootServletInitializer에 대해 보다 자세히 알고 싶으시다면 두 번째 참고 자료를 추천드립니다.)
