@@ -1,32 +1,48 @@
 ---
 layout: post
-title:  "우분투 내의 설치 된 패키지(package) 리스트 보기"
-tags: [리눅스, 우분투]
-categories: [etc]
-description: "이전에 설치 했던 패키지 목록을 보자"
+title:  "MySQL 테이블이 존재 여부 확인 쿼리"
+tags: [DB]
+categories: [DB]
+description: "테이블이 존재하는지 아닌지 쿼리를 통해 확인 해 보자"
 ---
 
-패키지 목록 보기    
-=============  
+테이블이 존재 여부 확인  
+===================  
 
-```shell
-dpkg -l  
+```sql
+SELECT 1 FROM Information_schema.tables
+WHERE table_schema = 'DB명'
+AND table_name = '테이블명'
+```  
+결과에 따라 1 또는 아무것도 반환 하지 않습니다.   
+
+```sql
+SELECT COUNT(*) FROM Information_schema.tables
+WHERE table_schema = 'DB명'
+AND table_name = '테이블명'
+```  
+결과에 따라 1 또는 0을 반환 합니다.  
+
+```sql
+SELECT EXISTS (
+  SELECT 1 FROM Information_schema.tables
+  WHERE table_schema = 'DB명'
+  AND table_name = '테이블명'
+) AS flag
 ```  
 
-## Ubuntu 14 이상에서는  
+결과에 따라 flag = 1 또는 flag = 0을 반환 합니다.  
 
-```shell
-apt list
+**COUNT**의 경우 이름에서 유추 할 수 있다시피 갯수를 세고, **EXISTS**의 경우 **ROW**가 존재하는지 아닌지를 확인 하는 차이가 있습니다.
+
+---
+
+만약 테이블 생성 때 확인 하는 것이라면  
+
+```sql
+create table if not exists "table name" values;
 ```  
 
-위와 같이도 확인이 가능 합니다.  
+`if not exists`를 통해 테이블이 없을 때만 생성 하면 됩니다!  
 
-## 특정 패키지 찾기  
-
-```shell
-dpkg -l | grep package-name
-```  
-
-자신이 설치 한 패키지의 버전을 확인 할 떄 사용하면 유용 합니다.  
-
-[출처](https://askubuntu.com/questions/17823/how-to-list-all-installed-packages)  
+[제타위키](https://zetawiki.com/wiki/MySQL_%ED%85%8C%EC%9D%B4%EB%B8%94_%EC%9E%88%EB%8A%94%EC%A7%80_%ED%99%95%EC%9D%B8), [EXISTS와 IN의 차이](http://sjs0270.tistory.com/50)  
