@@ -19,7 +19,7 @@ COUNT(\*)의 COUNT(1) 차이는??
 > select count(\*) from emp;  
 >
 > ### and we said...  
-> nothing, they are the same, incur the same amount of work -- do the   > same thing, take the same amount of resources.  
+> nothing, they are the same, incur the same amount of work -- do the same thing, take the same amount of resources.  
 
 출처: [ORACLE Ask TOM](https://asktom.oracle.com/pls/asktom/f?p=100:11:0::NO::P11_QUESTION_ID:1156159920245)  
 
