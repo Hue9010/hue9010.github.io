@@ -93,6 +93,8 @@ Config에서 Converter를 등록 할 때 사용된 `dateFormat` 형식으로 날
 > **yyyy-MM-dd HH.mm** -> 2018-04-03 13.44  
 > **yyyy-MM-dd** ->	2018-04-03
 
+한가지 주의하셔야 할 것은 YYYY와 yyyy는 다른 결과를 나타낼 수 있습니다. 일반적이라면 yyyy를 사용하시는걸 추천드립니다.([참고1](https://coderanch.com/t/637711/java/SimpleDateFormat-YY-yy-difference), [참고2](http://blog.daum.net/_blog/BlogTypeView.do?blogid=0Fb93&articleno=12877928))
+
 [각 알파벳의 의미(영어)](http://www.java2s.com/Tutorials/Java/Java_Format/0030__Java_Date_Format_Symbol.htm)  
 
 [더 많은 패턴 유형(한글)](https://www.ibm.com/support/knowledgecenter/ko/SSHEB3_3.3.2/com.ibm.tap.doc_3.3.2/loc_topics/c_custom_date_formats.html)  
